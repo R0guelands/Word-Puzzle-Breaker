@@ -40,7 +40,7 @@ def main():
                 time.sleep(1)
                 continue
             else:
-                Func.size_max = int(input("Type the maximum amount of syllables to be outputed: "))
+                Func.size_max = int(input("\nType the maximum amount of syllables to be outputed: "))
                 print("")
                 break
         for x in range(len(Func.letras)):
