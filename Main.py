@@ -91,6 +91,8 @@ def main():
                     Func.achadas.append(item)
             t2 = time.time()
             print("{}/{} -> %.2fs / {} words found with {} syllables / {} possible words".format(casa, Func.size_max, contador1, casa, len(Func.palavras)) % (t2 - t1))
+            if contador1 == 0:
+                break
         print("\nNumber of words found: ", Func.contador)
         print("\nFound words:\n")
         for x in range(1, len(Func.achadas) + 1):
