@@ -31,18 +31,31 @@ def main():
                 time.sleep(1)
                 continue
             else:
-                Func.letras = Func.letras.lower()
-                break
+                if len(Func.letras) < 3:
+                    print("\nType at least 3 letters")
+                    time.sleep(1)
+                    continue
+                else:
+                    Func.letras = Func.letras.lower()
+                    break
         while True:
             Func.size = int(input("\nType the minimun amount of syllables to be outputed (min(2), max({})): ".format(len(Func.letras) )))
-            if len(Func.letras) < 3 or Func.size < 2:
+            if Func.size < 2:
                 print("\nChoose more letters")
+                time.sleep(1)
+                continue
+            elif Func.size > len(Func.letras):
+                print("\nChoose less letters")
                 time.sleep(1)
                 continue
             else:
                 Func.size_max = int(input("\nType the maximum amount of syllables to be outputed (max({})): ".format(len(Func.letras))))
                 if Func.size_max > len(Func.letras):
                     print("\nChoose less letters")
+                    time.sleep(1)
+                    continue
+                elif Func.size_max < Func.size:
+                    print("\nChoose more letters")
                     time.sleep(1)
                     continue
                 print("")
